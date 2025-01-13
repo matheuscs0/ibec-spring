@@ -14,7 +14,7 @@ public class AutorController {
     @Autowired
     private AutorRepositorio repository;
 
-    @PostMapping("/autores")
+    @PostMapping()
     public ResponseEntity<Autor> cadastrarAutor(@RequestBody DadosCadastrarAutor dados) {
         Autor novoAutor = new Autor(dados);
         repository.save(novoAutor);

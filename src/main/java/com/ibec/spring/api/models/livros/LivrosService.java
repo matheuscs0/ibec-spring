@@ -14,12 +14,6 @@ public class LivrosService {
         this.livrosRepository = livrosRepository;
     }
 
-    public List<LivrosList> listarTodos() {
-        return livrosRepository.findAll().stream()
-                .map(LivrosList::new)
-                .collect(Collectors.toList());
-    }
-
     public List<LivrosList> buscarPorNomeAutor(String nomeAutor) {
         return livrosRepository.findByAutorNomeContainingIgnoreCase(nomeAutor).stream()
                 .map(LivrosList::new)
